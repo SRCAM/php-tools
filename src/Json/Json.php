@@ -4,17 +4,18 @@
 namespace saber\PhpTools\Json;
 
 
+use saber\PhpTools\Arrays\Container;
 
 class Json
 {
     /**
      * Wrapper for json_decode that throws when an error occurs.
      *
-     * @param string $json    JSON data to parse
-     * @param bool   $assoc   When true, returned objects will be converted
+     * @param string $json JSON data to parse
+     * @param bool $assoc When true, returned objects will be converted
      *                        into associative arrays.
-     * @param int    $depth   User specified recursion depth.
-     * @param int    $options Bitmask of JSON decode options.
+     * @param int $depth User specified recursion depth.
+     * @param int $options Bitmask of JSON decode options.
      *
      * @return object|array|string|int|float|bool|null
      *
@@ -36,9 +37,9 @@ class Json
     /**
      * Wrapper for JSON encoding that throws when an error occurs.
      *
-     * @param mixed $value   The value being encoded
-     * @param int   $options JSON encode option bitmask
-     * @param int   $depth   Set the maximum depth. Must be greater than zero.
+     * @param mixed $value The value being encoded
+     * @param int $options JSON encode option bitmask
+     * @param int $depth Set the maximum depth. Must be greater than zero.
      *
      *
      * @link https://www.php.net/manual/en/function.json-encode.php
@@ -54,5 +55,20 @@ class Json
 
         /** @var string */
         return $json;
+    }
+
+
+    /**
+     * json转object
+     * @param string $json
+     * @param bool $assoc
+     * @param int $depth
+     * @param int $options
+     * @return Container
+     */
+    public static function jsonToObject(string $json, bool $assoc = false, int $depth = 512, int $options = 0): Container
+    {
+       $data =  self::jsonDecode($json,$assoc,$depth,$options);
+       return new Container($data);
     }
 }

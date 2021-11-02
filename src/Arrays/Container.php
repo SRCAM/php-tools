@@ -20,6 +20,12 @@ class Container  implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     protected $items = [];
 
 
+    public function __construct($items)
+    {
+        $this->items = $items;
+    }
+
+
     /**
      * @return ArrayIterator
      */
