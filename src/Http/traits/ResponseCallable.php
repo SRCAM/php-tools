@@ -5,8 +5,8 @@ namespace saber\PhpTools\Http\traits;
 
 
 use Psr\Http\Message\ResponseInterface;
+use saber\PhpTools\Contract\Arrayable;
 use saber\PhpTools\Exceptions\HttpInvalidArgumentException;
-use saber\PhpTools\Http\contract\Arrayable;
 use saber\PhpTools\Http\Response;
 
 trait ResponseCallable

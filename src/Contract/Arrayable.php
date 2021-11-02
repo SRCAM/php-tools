@@ -1,11 +1,12 @@
 <?php
 
 
-namespace saber\PhpTools\Http\contract;
+namespace saber\PhpTools\Contract;
 
 
 interface Arrayable
 {
     public function toArray(): array;
+
 
 }
