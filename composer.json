@@ -1,21 +1,22 @@
 {
-    "name": "saber/php-tools",
-    "authors": [
-        {
-            "name": "saber",
-            "email": "350224276@qq.com"
-        }
-    ],
-    "autoload":{
-        "psr-4": {
-            "saber\\PhpTools\\":"src/"
-        }
-    },
-    "require": {
-        "ext-json": "*",
-        "guzzlehttp/guzzle": "^7.4",
-        "ext-curl": "*",
-      "ext-mbstring": "*",
-        "psr/container": "^2.0"
+  "name": "saber/php-tools",
+  "authors": [
+    {
+      "name": "saber",
+      "email": "350224276@qq.com"
     }
+  ],
+  "autoload": {
+    "psr-4": {
+      "saber\\PhpTools\\": "src/"
+    }
+  },
+  "require": {
+    "ext-json": "*",
+    "guzzlehttp/guzzle": "^7.4",
+    "ext-curl": "*",
+    "ext-mbstring": "*",
+    "psr/container": "^2.0",
+    "ext-ctype": "*"
+  }
 }

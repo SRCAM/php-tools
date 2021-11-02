@@ -131,7 +131,7 @@ class Str
      * @param string $delimiter
      * @return string
      */
-    public static function snake (string $value, string $delimiter = '_')
+    public static function snake (string $value, string $delimiter = '_'): string
     {
 
         $key = $value;
@@ -152,10 +152,10 @@ class Str
     /**
      * 下划线转驼峰(首字母小写)
      *
-     * @param  string $value
+     * @param string $value
      * @return string
      */
-    public static function camel($value)
+    public static function camel(string $value): string
     {
         if (isset(static::$camelCache[$value])) {
             return static::$camelCache[$value];
@@ -167,10 +167,10 @@ class Str
     /**
      * 下划线转驼峰(首字母大写)
      *
-     * @param  string $value
+     * @param string $value
      * @return string
      */
-    public static function studly($value)
+    public static function studly(string $value): string
     {
         $key = $value;
 
@@ -186,10 +186,10 @@ class Str
     /**
      * 转为首字母大写的标题格式
      *
-     * @param  string $value
+     * @param string $value
      * @return string
      */
-    public static function title($value)
+    public static function title(string $value): string
     {
         return mb_convert_case($value, MB_CASE_TITLE, 'UTF-8');
     }
