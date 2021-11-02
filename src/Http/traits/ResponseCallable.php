@@ -50,7 +50,6 @@ trait ResponseCallable
         switch (true) {
             case $response instanceof ResponseInterface:
                 $response = Response::buildFromPsrResponse($response);
-
                 break;
             case $response instanceof Arrayable:
                 $response = new Response(200, [], json_encode($response->toArray()));

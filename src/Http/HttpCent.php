@@ -98,7 +98,7 @@ class HttpCent
 
         return $returnRaw ? $response : $this->detectAndCastResponseToType($response, $this->responseType);
     }
-
+    
     /**
      *注册中间件
      */
