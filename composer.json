@@ -17,6 +17,14 @@
     "ext-json": "*",
     "guzzlehttp/guzzle": "^7.4",
     "voku/arrayy": "^7.8",
-    "symfony/yaml": "^5.3"
+    "symfony/yaml": "^5.3",
+    "topthink/framework": "^6.0.0"
+  },
+  "extra": {
+    "think": {
+      "services": [
+        "think\\captcha\\CaptchaService"
+      ]
+    }
   }
 }

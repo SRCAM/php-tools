@@ -16,6 +16,6 @@ class YamlService extends Service
 
     public function boot(): void
     {
-        
+        $this->app->yaml->initialization();
     }
 }
