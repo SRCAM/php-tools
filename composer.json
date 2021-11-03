@@ -14,9 +14,7 @@
   "require": {
     "ext-json": "*",
     "guzzlehttp/guzzle": "^7.4",
-    "ext-curl": "*",
-    "ext-mbstring": "*",
-    "psr/container": "^2.0",
-    "ext-ctype": "*"
+    "voku/arrayy": "^7.8",
+    "symfony/yaml": "^5.3"
   }
 }
