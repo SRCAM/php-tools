@@ -7,6 +7,7 @@ namespace saber\PhpTools\Think\Yaml;
 use Arrayy\Arrayy;
 use Exception;
 use Symfony\Component\Yaml\Yaml as SymfonyYaml;
+use think\App;
 
 class Yaml implements \ArrayAccess
 {
@@ -33,10 +34,9 @@ class Yaml implements \ArrayAccess
      */
     public function load(string $file): void
     {
-        $env = is_file($file)? SymfonyYaml::parseFile($file, true) : [];
+        $env = is_file($file) ? SymfonyYaml::parseFile($file, true) : [];
         $this->set($env);
     }
-
 
 
     /**
@@ -49,7 +49,7 @@ class Yaml implements \ArrayAccess
             $env = array_change_key_case($env, CASE_UPPER);
             $this->data->push($env);
         } else {
-            $this->data->set($env,$value);
+            $this->data->set($env, $value);
         }
     }
 
@@ -137,12 +137,23 @@ class Yaml implements \ArrayAccess
      */
     public function offsetSet($offset, $value)
     {
-        $this->set($offset,$value);
+        $this->set($offset, $value);
     }
 
     public function offsetUnset($name)
     {
         throw new Exception('not support: unset');
+    }
+
+
+    /**
+     * 兼容think-php
+     * 初始化
+     */
+    public function initialization(App $app, string $name = null)
+    {
+        $file = empty($name) ? 'env.yaml' : $name . '.yaml';
+        $this->load($app->getRootPath() . $file);
     }
 
 
