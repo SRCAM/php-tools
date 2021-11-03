@@ -10,12 +10,12 @@ class YamlService extends Service
 {
     public function register(): void
     {
-        $this->app->register('yaml',Yaml::class);
+        $this->app->bind('yaml',Yaml::class);
     }
 
 
     public function boot(): void
     {
-        $this->app->yaml->initialization();
+        $this->app->yaml->initialization($this->app);
     }
 }

@@ -46,7 +46,7 @@ class Yaml implements \ArrayAccess
     public function set($env, $value = null)
     {
         if (is_array($env)) {
-            $this->data->push($env);
+            $this->data = $this->data->mergeAppendKeepIndex($env);
         } else {
             $this->data->set($env, $value);
         }
