@@ -1,5 +1,6 @@
 {
   "name": "saber/php-tools",
+  "license": "MIT",
   "authors": [
     {
       "name": "saber",
@@ -12,6 +13,7 @@
     }
   },
   "require": {
+    "php": ">=7.3.0",
     "ext-json": "*",
     "guzzlehttp/guzzle": "^7.4",
     "voku/arrayy": "^7.8",
