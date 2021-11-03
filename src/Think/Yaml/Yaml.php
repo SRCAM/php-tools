@@ -153,6 +153,8 @@ class Yaml implements \ArrayAccess
     {
         $file = empty($name) ? 'env.yaml' : $name . '.yaml';
         $this->load($app->getRootPath() . $file);
+        $app->bind('env', $this);
+        $app->debug($this->get('app.debug',false));
     }
 
 
