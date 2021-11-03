@@ -46,7 +46,6 @@ class Yaml implements \ArrayAccess
     public function set($env, $value = null)
     {
         if (is_array($env)) {
-            $env = array_change_key_case($env, CASE_UPPER);
             $this->data->push($env);
         } else {
             $this->data->set($env, $value);
