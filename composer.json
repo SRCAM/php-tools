@@ -22,7 +22,7 @@
   "extra": {
     "think": {
       "services": [
-        "think\\captcha\\CaptchaService"
+        "saber\\PhpTools\\Think\\Yaml\\YamlService"
       ]
     }
   }
