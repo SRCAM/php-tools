@@ -1,7 +1,7 @@
 <?php
 
 
-namespace saber\PhpTools\Yaml;
+namespace saber\PhpTools\Think\Yaml;
 
 
 use Arrayy\Arrayy;
