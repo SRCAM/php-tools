@@ -49,7 +49,7 @@ class Yaml implements \ArrayAccess
             $env = array_change_key_case($env, CASE_UPPER);
             $this->data->push($env);
         } else {
-            $this->data->push([$env, $value]);
+            $this->data->set($env,$value);
         }
     }
 
