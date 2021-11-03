@@ -6,6 +6,7 @@ namespace saber\PhpTools\Think\Yaml;
 
 use Arrayy\Arrayy;
 use Exception;
+use Symfony\Component\Yaml\Yaml as SymfonyYaml;
 
 class Yaml implements \ArrayAccess
 {
@@ -22,6 +23,20 @@ class Yaml implements \ArrayAccess
     {
         $this->data = new  Arrayy($_ENV);
     }
+
+
+    /**
+     * 读取环境变量定义文件
+     * @access public
+     * @param string $file 环境变量定义文件
+     * @return void
+     */
+    public function load(string $file): void
+    {
+        $env = is_file($file)? SymfonyYaml::parseFile($file, true) : [];
+        $this->set($env);
+    }
+
 
 
     /**
